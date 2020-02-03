@@ -1,5 +1,23 @@
 ///////////////////////// For Atmega Board//////////////////////
-////////////////////////Run this on the board with the atmega 328 chip i assumed that the co2 sensor will be on A0 kindly change if necessary/////////////////////
+
+
+
+///
+#include  <virtuabotixRTC.h>
+//Wiring SCLK -> 7, I/O -> 6, CE -> 5
+//Or     CLK -> 7 , DAT -> 6, Reset -> 5
+
+virtuabotixRTC myRTC(10, 5, 7 ); //If you change the wiring change the pins here also
+
+  // Set the current date, and time in the following format:
+  // seconds, minutes, hours, day of the week, day of the month, month, year
+
+
+
+
+
+
+
 #include<Wire.h>
 #include<dht.h>
 #include<LiquidCrystal_I2C.h>
@@ -11,7 +29,7 @@
 
 int humidity_reading =0;
 int temperature_reading =0;
-const int chipSelect = 10;
+const int chipSelect = 9;
 int count = 0;
 
 String temp_sd = " ";

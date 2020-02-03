@@ -4,7 +4,7 @@
 //Wiring SCLK -> 7, I/O -> 6, CE -> 5
 //Or     CLK -> 7 , DAT -> 6, Reset -> 5
 
-virtuabotixRTC myRTC(7, 6, 5); //If you change the wiring change the pins here also
+virtuabotixRTC myRTC(7, 4, 5 ); //If you change the wiring change the pins here also
 
   // Set the current date, and time in the following format:
   // seconds, minutes, hours, day of the week, day of the month, month, year
@@ -33,7 +33,7 @@ int count=0;
 void setup() {
     // Open serial communications and wait for port to open:
   Serial.begin(9600);
-   myRTC.setDS1302Time(10, 53, 10, 07, 13, 01, 2020);
+   myRTC.setDS1302Time(10, 05, 10, 07, 15, 01, 2020);
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
   }
@@ -55,7 +55,7 @@ void loop() {
   
   //Reading Co2 values Assumed pin A0 is Co2 pin
 
-  int Mq135ensor = analogRead(A0); 
+  int Mq135ensor = analogRead(A1); 
   //Serial.print("DHT22, \t");
 int chk = DHT.read22(DHT22_PIN);
  Serial.print("Current Date / Time: ");
