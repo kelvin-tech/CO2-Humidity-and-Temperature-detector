@@ -11,7 +11,7 @@
 
 int humidity_reading =0;
 int temperature_reading =0;
-const int chipSelect = 9;
+const int chipSelect = 4;
 int count = 0;
 
 String temp_sd = " ";
